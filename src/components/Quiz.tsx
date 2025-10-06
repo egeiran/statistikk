@@ -80,17 +80,27 @@ export default function Quiz({ questions }: { questions: readonly QuizQuestion[]
         </button>
       )}
 
-      {selected !== null && qIndex === questions.length - 1 && (
-        <div className="mt-4">
-          <p className="text-emerald-400 font-semibold mb-1">
-            🎉 Du har fullført quizen!
-          </p>
-          <p className="text-zinc-300">
-            Resultat: {score}/{questions.length} riktig (
-            {Math.round((score / questions.length) * 100)}%)
-          </p>
-        </div>
-      )}
+    {selected !== null && qIndex === questions.length - 1 && (
+    <div className="mt-4 text-center">
+        <p className="text-emerald-400 font-semibold mb-1">
+        🎉 Du har fullført quizen!
+        </p>
+        <p className="text-zinc-300 mb-3">
+        Resultat: {score}/{questions.length} riktig (
+        {Math.round((score / questions.length) * 100)}%)
+        </p>
+        <button
+        onClick={() => {
+            setQIndex(0);
+            setSelected(null);
+            setScore(0);
+        }}
+        className="px-3 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-md text-white"
+        >
+        🔁 Ta quizen på nytt
+        </button>
+    </div>
+    )}
     </div>
   );
 }

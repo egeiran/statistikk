@@ -47,7 +47,7 @@ export default function ChapterContent({ chapterId }: { chapterId: number }) {
         {/* Quiz */}
         <div className="flex flex-col lg:flex-row gap-8 mt-10 max-w-500px justify-center">
             <div className="flex-1 max-w-xl">
-                <Quiz questions={chapter.quiz} />
+                <Quiz key={chapter.id} questions={chapter.quiz} />
             </div>
         </div>
     </div>
