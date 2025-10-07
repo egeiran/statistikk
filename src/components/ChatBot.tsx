@@ -109,7 +109,6 @@ export default function ChatBot({ chapterId }: ChatBotProps) {
                 )}
             </div>
             {/* Selected item details */}
-            <div className={`h-40 overflow-y-auto grid grid-cols-2 gap-4 ${aiResponse ? "mb-1" : ""}`}>
                 {selectedItem ? (
                     mode === "formulas" ? (
                         (() => {
@@ -142,7 +141,6 @@ export default function ChatBot({ chapterId }: ChatBotProps) {
                 ) : (
                     <p className="text-zinc-500">Velg et element for å se detaljer.</p>
                 )}
-            </div>
             {aiResponse && (
                 <div className="mt-1 p-3 bg-blue-900 border border-blue-700 rounded-md">
                     <h4 className="text-md font-semibold mb-2">AI Svar:</h4>
