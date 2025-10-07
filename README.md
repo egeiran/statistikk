@@ -3,7 +3,6 @@
 Et moderne React + TypeScript prosjekt for å lære **TMA4245 Statistikk** på en mer engasjerende måte.  
 Appen inkluderer forklaringer, formler og quiz for hvert kapittel – med KaTeX for pen matematisk visning 🧮
 
----
 
 ## 🚀 Tech Stack
 
@@ -13,7 +12,6 @@ Appen inkluderer forklaringer, formler og quiz for hvert kapittel – med KaTeX 
 - **React KaTeX** for LaTeX-formler
 - **Lucide Icons** for enkel, clean ikonbruk
 
---- 
 
 ## Hvordan kjøre prosjektet?
 
@@ -24,7 +22,17 @@ Gå til terminalen og skriv
 npm run dev
 ```
 
----
+### AI Chat/Hjelp
+
+For å kunne få hjelp av AI (integrert funksjon for å forklare begreper og formler) er man nødt til å
+
+1. Lage en .env fil i rotmappen
+2. Lage den lik som .env.example
+3. Finne en OpenAI nøkkel som er aktiv (dette kan man lage selv på)
+4. Legge den til etter `VITE_OPENAI_API_KEY`
+
+_**Voila!**_
+
 
 ## Hvordan er den laget?
 
