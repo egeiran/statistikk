@@ -1,6 +1,7 @@
 import { BlockMath } from "react-katex";
 import { useState } from "react";
 import { ClipboardCopy } from "lucide-react"; // npm i lucide-react
+import MathText from "./MathText";
 
 export type FormulaCardProps = {
   title: string;
@@ -27,7 +28,9 @@ export default function FormulaCard({ title, formula, explanation, importance }:
         </button>
       </div>
 
-      <p className="text-sm text-zinc-400 mb-3">{explanation}</p>
+      <p className="text-sm text-zinc-400 mb-3">
+        <MathText text={explanation} />
+      </p>
 
       <div className="bg-zinc-950 rounded-md p-3 text-center overflow-x-auto">
         <BlockMath math={formula} />

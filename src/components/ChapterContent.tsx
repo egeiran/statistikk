@@ -18,6 +18,16 @@ export default function ChapterContent({ chapterId }: { chapterId: number }) {
 
         {/* Begreper og formler */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12">
+            {/* Formler */}
+            <div>
+                <h3 className="text-xl font-semibold mb-2">Formler</h3>
+                <div className="grid gap-4">
+                {chapter.formulas.map((f, i) => (
+                    <FormulaCard key={i} {...f} />
+                ))}
+                </div>
+            </div>
+
             {/* Begreper */}
             <div>
                 <h3 className="text-xl font-semibold mb-2">Begreper</h3>
@@ -31,16 +41,6 @@ export default function ChapterContent({ chapterId }: { chapterId: number }) {
                     </div>
                 ))}
             </div>
-            </div>
-
-            {/* Formler */}
-            <div>
-                <h3 className="text-xl font-semibold mb-2">Formler</h3>
-                <div className="grid gap-4">
-                {chapter.formulas.map((f, i) => (
-                    <FormulaCard key={i} {...f} />
-                ))}
-                </div>
             </div>
         </div>
 

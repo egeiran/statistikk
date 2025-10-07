@@ -852,7 +852,7 @@ export const chapters = [
                 title: "Predikert verdi",
                 formula: "\\hat{Y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1 X_i",
                 explanation: "Modellens estimat for Y basert på X.",
-                importance: "Middel",
+                importance: "Middels",
             },
             {
                 title: "R-kvadrat",
