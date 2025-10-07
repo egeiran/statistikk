@@ -11,7 +11,7 @@ export const chapters = [
   { id: 8, title: "Parameterestimering", emoji: "📏" },
   { id: 9, title: "Konfidens- og prediksjonsintervall", emoji: "🔎" },
   { id: 10, title: "Hypotesetesting", emoji: "⚖️" },
-  { id: 11, title: "Enkel lineær regresjon", emoji: "📈➕" },
+  { id: 11, title: "Enkel lineær regresjon", emoji: "➕" },
 ];
 
 export default function Sidebar() {
@@ -36,7 +36,7 @@ export default function Sidebar() {
               `}
             >
               <span>{ch.emoji}</span>
-              <span>{ch.title}</span>
+              <span>{ch.id}: {ch.title}</span>
             </Link>
           );
         })}
