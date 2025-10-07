@@ -2,6 +2,7 @@ import FormulaCard from "./FormulaCard";
 import { chapters } from "../data/chapters";
 import Quiz from "./Quiz";
 import MathText from "./MathText";
+import ChatBot from "./ChatBot";
 
 export default function ChapterContent({ chapterId }: { chapterId: number }) {
   const chapter = chapters.find((c) => c.id === chapterId)!;
@@ -32,16 +33,19 @@ export default function ChapterContent({ chapterId }: { chapterId: number }) {
             <div>
                 <h3 className="text-xl font-semibold mb-2">Begreper</h3>
                 <div className="grid gap-3">
-                {chapter.concepts.map((c, i) => (
-                    <div key={i} className="bg-zinc-900 border border-zinc-800 p-3 rounded-xl">
-                    <strong className="text-white">{c.term}</strong>
-                    <p className="text-zinc-400 text-sm mt-1 leading-relaxed">
-                        <MathText text={c.definition} />
-                    </p>
-                    </div>
-                ))}
+                    {chapter.concepts.map((c, i) => (
+                        <div key={i} className="bg-zinc-900 border border-zinc-800 p-3 rounded-xl">
+                        <strong className="text-white">{c.term}</strong>
+                        <p className="text-zinc-400 text-sm mt-1 leading-relaxed">
+                            <MathText text={c.definition} />
+                        </p>
+                        </div>
+                    ))}
+                </div>
             </div>
-            </div>
+        </div>
+        <div className="gap-8 mt-10 w-[600px] mx-auto justify-center">
+            <ChatBot chapterId={chapter.id} />
         </div>
 
         {/* Quiz */}
