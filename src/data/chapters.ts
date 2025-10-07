@@ -569,4 +569,350 @@ export const chapters = [
             },
         ],
     },
+    {
+        id: 8,
+        title: "Parameterestimering",
+        emoji: "📏",
+        intro:
+            "Parameterestimering går ut på å bruke observasjonsdata for å anslå ukjente parametre i en modell.",
+        concepts: [
+            { term: "Estimator", definition: "Funksjon av data som gir en verdi for parameteren." },
+            { term: "Upartiskhet", definition: "En estimator er upartisk hvis $E[\\hat{\\theta}] = \\theta$." },
+            { term: "Konsistens", definition: "Estimatoren konvergerer mot sanne parameter når $n\\to\\infty$." },
+            { term: "Effektivitet", definition: "Lav varians blant alle upartiske estimatorer." },
+            { term: "Maximum Likelihood", definition: "Parametervalg som maksimerer sannsynligheten for data." },
+        ],
+        formulas: [
+            {
+                title: "Likelihood-funksjon",
+                formula: "L(\\theta) = \\prod_{i=1}^n f(x_i;\\theta)",
+                explanation: "Sannsynlighet for observerte data som funksjon av parameter.",
+                importance: "Høy",
+            },
+            {
+                title: "MLE-estimat",
+                formula: "\\hat{\\theta}_{ML} = \\arg\\max_{\\theta} L(\\theta)",
+                explanation: "Den parameteren som maksimerer likelihood.",
+                importance: "Høy",
+            },
+            {
+                title: "Unbiased estimator",
+                formula: "E[\\hat{\\theta}] = \\theta",
+                explanation: "Estimatet i gjennomsnitt gir riktig parameter.",
+                importance: "Middels",
+            },
+            {
+                title: "Cramér–Rao-grense",
+                formula: "Var(\\hat{\\theta}) \\ge \\frac{1}{I(\\theta)}",
+                explanation: "Nedre grense på varians for unbiased estimatorer.",
+                importance: "Middels",
+            },
+        ],
+        quiz: [
+            {
+                question: "Hva betyr at en estimator er upartisk?",
+                options: [
+                    "$E[\\hat{\\theta}] = \\theta$",
+                    "$Var(\\hat{\\theta}) = 0$",
+                    "$\\hat{\\theta} > \\theta$ alltid",
+                    "$\\hat{\\theta}$ er konstant",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva står MLE for?",
+                options: [
+                    "Maximum Likelihood Estimation",
+                    "Mean Linear Estimator",
+                    "Minimum Loss Estimate",
+                    "Most Likely Estimate",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva sier Cramér–Rao-grensen?",
+                options: [
+                    "Var(\\hat{\\theta}) \\ge 1/I(\\theta)",
+                    "Var(\\hat{\\theta}) \\le 1/I(\\theta)",
+                    "Estimatorer har ingen øvre variansgrense",
+                    "Estimatet er alltid upartisk",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva er en konsistent estimator?",
+                options: [
+                    "Estimatoren konvergerer mot sanne parameter når n øker",
+                    "Estimatoren er upartisk",
+                    "Estimatoren har lavest varians",
+                    "Estimatoren estimerer konstant",
+                ],
+                answer: 0,
+            },
+            {
+                question: "MLE-estimatet velges typisk ved å:",
+                options: [
+                    "Maksimere L(\\theta)",
+                    "Minimere varians",
+                    "Minimere bias",
+                    "Maksimere kvadratsum",
+                ],
+                answer: 0,
+            },
+        ],
+    },
+    {
+        id: 9,
+        title: "Konfidens- og prediksjonsintervall",
+        emoji: "🔎",
+        intro:
+            "Et konfidensintervall gir et estimert område for parameter, mens prediksjonsintervall gir område for fremtidige observasjoner.",
+        concepts: [
+            { term: "Konfidensintervall", definition: "Intervall som med viss konfidens inneholder parameteren." },
+            { term: "Prediksjonsintervall", definition: "Intervall som forventes å inneholde fremtidig observasjon." },
+            { term: "Z-intervall", definition: "Brukes ved kjent varians og stor n." },
+            { term: "t-intervall", definition: "Brukes når varians ukjent og liten n." },
+            { term: "Signifikansnivå", definition: "Sannsynligheten for å bomme på intervallet: $\\alpha$." },
+        ],
+        formulas: [
+            {
+                title: "Konfidensintervall (Z)",
+                formula: "\\bar{x} \\pm z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}}",
+                explanation: "Intervall når variansen er kjent.",
+                importance: "Høy",
+            },
+            {
+                title: "Konfidensintervall (t)",
+                formula: "\\bar{x} \\pm t_{\\alpha/2, n-1} \\frac{s}{\\sqrt{n}}",
+                explanation: "Intervall når variansen estimeres fra data.",
+                importance: "Høy",
+            },
+            {
+                title: "Prediksjonsintervall",
+                formula: "\\bar{x} \\pm t_{\\alpha/2} s \\sqrt{1 + \\frac{1}{n}}",
+                explanation: "Intervall for nye observasjoner.",
+                importance: "Middels",
+            },
+        ],
+        quiz: [
+            {
+                question: "Når brukes t-intervall?",
+                options: [
+                    "Når varians er ukjent og n er liten",
+                    "Når varians er kjent",
+                    "Alltid",
+                    "Aldri",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva er $\\alpha$ i et 95 % konfidensintervall?",
+                options: ["0.05", "0.95", "0.5", "0.005"],
+                answer: 0,
+            },
+            {
+                question: "Hva gjør $z_{\\alpha/2}$-leddet?",
+                options: [
+                    "Bestemmer bredde basert på ønsket konfidensnivå",
+                    "Estimerer gjennomsnitt",
+                    "Estimerer varians",
+                    "Kvantiserer data",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva er forskjellen på prediksjons- og konfidensintervall?",
+                options: [
+                    "Prediksjon gjelder for individuelle observasjoner, CI for parameter",
+                    "Konfidensintervall for observasjoner, prediksjons for parameter",
+                    "De er identiske",
+                    "Prediksjon er smalere",
+                ],
+                answer: 0,
+            },
+            {
+                question: "I prediksjonsintervall-formelen, hva gjør $\\sqrt{1 + 1/n}$?",
+                options: [
+                    "Tar hensyn til usikkerhet i estimatet",
+                    "Sjekker normalitet",
+                    "Korrigerer for bias",
+                    "Gjør intervallet smalere",
+                ],
+                answer: 0,
+            },
+        ],
+    },
+    {
+        id: 10,
+        title: "Hypotesetesting",
+        emoji: "⚖️",
+        intro:
+            "Hypotesetesting er metode for å teste om observerte data gir støtte for eller mot en påstand (nullhypotese).",
+        concepts: [
+            { term: "Nullhypotese", definition: "Påstått parameterverdi vi tester mot: $H_0$." },
+            { term: "Alternativ hypotese", definition: "Hypotesen vi prøver å finne støtte for: $H_1$." },
+            { term: "p-verdi", definition: "Sannsynligheten for å observere det eller noe mer ekstremt gitt $H_0$." },
+            { term: "Alfanivå", definition: "Terskel for å forkaste nullhypotesen, ofte 0.05." },
+            { term: "Type I / Type II-feil", definition: "Feil ved å forkaste / ikke forkaste når vi ikke burde." },
+        ],
+        formulas: [
+            {
+                title: "Teststatistikk (Z)",
+                formula: "Z = \\frac{\\bar{x} - \\mu_0}{\\sigma/\\sqrt{n}}",
+                explanation: "Z-test for kjent varians.",
+                importance: "Høy",
+            },
+            {
+                title: "Teststatistikk (t)",
+                formula: "t = \\frac{\\bar{x} - \\mu_0}{s/\\sqrt{n}}",
+                explanation: "t-test når variansen estimeres.",
+                importance: "Høy",
+            },
+            {
+                title: "p-verdi (to-sidig)",
+                formula: "p = 2\\left(1 - Φ(|z|)\\right)",
+                explanation: "Sannsynlighet utenfor testgrense i begge retninger.",
+                importance: "Middels",
+            },
+        ],
+        quiz: [
+            {
+                question: "Hva representerer p-verdien?",
+                options: [
+                    "Sannsynlighet for data eller mer ekstremt gitt $H_0$",
+                    "Sannsynlighet for at $H_0$ er sann",
+                    "Feilrate",
+                    "Estimert parameter",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Når forkaster vi $H_0$?",
+                options: [
+                    "Når p ≤ α",
+                    "Når p > α",
+                    "Når teststatistikk er liten",
+                    "Alltid",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva er en Type I-feil?",
+                options: [
+                    "Forkaste $H_0$ når den er sann",
+                    "Ikke forkaste $H_0$ når den er falsk",
+                    "Å velge feil nivå",
+                    "Feil i beregning",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva er en tosidig test?",
+                options: [
+                    "Teste for avvik i begge retninger",
+                    "Teste kun for større verdi",
+                    "Teste kun for mindre verdi",
+                    "Teste for likhet",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Når brukes t-test i hypotesetesting?",
+                options: [
+                    "Når variansen er ukjent",
+                    "Når variansen er kjent",
+                    "Når n er ekstremt stor",
+                    "Når data er binomisk",
+                ],
+                answer: 0,
+            },
+        ],
+    },
+    {
+        id: 11,
+        title: "Enkel lineær regresjon",
+        emoji: "📈➕",
+        intro:
+            "Enkel lineær regresjon beskriver lineær sammenheng mellom to variable, med modell $Y = \\beta_0 + \\beta_1 X + \\epsilon$.",
+        concepts: [
+            { term: "Regression line", definition: "$Y = \\beta_0 + \\beta_1 X$." },
+            { term: "Estimater", definition: "Beregninger av $\\hat{\\beta}_0$, $\\hat{\\beta}_1$." },
+            { term: "Residualer", definition: "Forskjellen mellom observert og predikert verdi." },
+            { term: "R-kvadrat", definition: "Andel varians forklarte av modellen." },
+            { term: "Standard error", definition: "Estimert standardavvik i koeffisienter." },
+        ],
+        formulas: [
+            {
+                title: "OLS-estimater",
+                formula: "\\hat{\\beta}_1 = \\frac{Cov(X,Y)}{Var(X)}, \\quad \\hat{\\beta}_0 = \\bar{Y} - \\hat{\\beta}_1 \\bar{X}",
+                explanation: "Estimater for stigning og skjæringspunkt.",
+                importance: "Høy",
+            },
+            {
+                title: "Predikert verdi",
+                formula: "\\hat{Y}_i = \\hat{\\beta}_0 + \\hat{\\beta}_1 X_i",
+                explanation: "Modellens estimat for Y basert på X.",
+                importance: "Middel",
+            },
+            {
+                title: "R-kvadrat",
+                formula: "R^2 = 1 - \\frac{SSR}{SST}",
+                explanation: "Andel varians i Y som forklares av modellen.",
+                importance: "Høy",
+            },
+        ],
+        quiz: [
+            {
+                question: "Hva er modellen for enkel lineær regresjon?",
+                options: [
+                    "$Y = \\beta_0 + \\beta_1 X + \\epsilon$",
+                    "$Y = \\alpha X^2$",
+                    "$Y = X / \\beta$",
+                    "$Y = \\beta_1 + X$",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hvordan estimerer man $\\beta_1$?",
+                options: [
+                    "$Cov(X,Y)/Var(X)$",
+                    "$Var(X)/Cov(X,Y)$",
+                    "$\\hat{Y}/X$",
+                    "$\\beta_0 / X$",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva er residual?",
+                options: [
+                    "Forskjellen mellom observert og predikert verdi",
+                    "Forventet verdi minus middel",
+                    "Standard feil",
+                    "Korrelasjon mellom variabler",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva betyr $R^2$?",
+                options: [
+                    "Andel varians i Y forklart av modellen",
+                    "Korrelasjon mellom X og Y",
+                    "Varians i Y",
+                    "Feilen i modell estimering",
+                ],
+                answer: 0,
+            },
+            {
+                question: "Hva er $\\hat{Y}_i$?",
+                options: [
+                    "Predikert verdi for Y basert på X og estimatene",
+                    "Middelverdien av Y",
+                    "Residualverdi",
+                    "Feil",
+                ],
+                answer: 0,
+            },
+        ],
+    }
+
 ] as const;

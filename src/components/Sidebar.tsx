@@ -8,6 +8,10 @@ export const chapters = [
   { id: 5, title: "Viktige diskrete fordelinger", emoji: "🎯" },
   { id: 6, title: "Viktige kontinuerlige fordelinger", emoji: "📉" },
   { id: 7, title: "Funksjoner av stokastiske variabler", emoji: "🔀" },
+  { id: 8, title: "Parameterestimering", emoji: "📏" },
+  { id: 9, title: "Konfidens- og prediksjonsintervall", emoji: "🔎" },
+  { id: 10, title: "Hypotesetesting", emoji: "⚖️" },
+  { id: 11, title: "Enkel lineær regresjon", emoji: "📈➕" },
 ];
 
 export default function Sidebar() {
@@ -21,7 +25,8 @@ export default function Sidebar() {
 
       <nav className="space-y-2">
         {chapters.map((ch) => {
-          const active = location.pathname.includes(ch.id.toString());
+          let active = false;
+          active = location.pathname.endsWith("/" + ch.id.toString());
           return (
             <Link
               key={ch.id}
