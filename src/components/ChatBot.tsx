@@ -52,19 +52,6 @@ export default function ChatBot({ chapterId }: ChatBotProps) {
             <div className="mb-4 flex space-x-2 gap-2">
                 <button
                 onClick={() => {
-                    setMode("concepts");
-                    setSelectedItem(null);
-                }}
-                className={`px-3 py-2 rounded-md ${
-                    mode === "concepts"
-                    ? "bg-emerald-700 text-white"
-                    : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
-                }`}
-                >
-                    Begreper
-                </button>
-                <button
-                onClick={() => {
                     setMode("formulas");
                     setSelectedItem(null);
                 }}
@@ -75,6 +62,19 @@ export default function ChatBot({ chapterId }: ChatBotProps) {
                 }`}
                 >
                     Formler
+                </button>
+                <button
+                onClick={() => {
+                    setMode("concepts");
+                    setSelectedItem(null);
+                }}
+                className={`px-3 py-2 rounded-md ${
+                    mode === "concepts"
+                    ? "bg-emerald-700 text-white"
+                    : "bg-zinc-800 text-zinc-300 hover:bg-zinc-700"
+                }`}
+                >
+                    Begreper
                 </button>
                 {/* Ask AI button all the way to the right */}
                 <button className="ml-auto px-3 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50" 
@@ -109,7 +109,7 @@ export default function ChatBot({ chapterId }: ChatBotProps) {
                 )}
             </div>
             {/* Selected item details */}
-            <div className={`h-40 overflow-y-auto grid grid-cols-2 gap-4 ${aiResponse ? "mb-2" : ""}`}>
+            <div className={`h-40 overflow-y-auto grid grid-cols-2 gap-4 ${aiResponse ? "mb-1" : ""}`}>
                 {selectedItem ? (
                     mode === "formulas" ? (
                         (() => {
@@ -142,17 +142,17 @@ export default function ChatBot({ chapterId }: ChatBotProps) {
                 ) : (
                     <p className="text-zinc-500">Velg et element for å se detaljer.</p>
                 )}
-                {aiResponse && (
-                    <div className="mt-4 p-3 bg-blue-900 border border-blue-700 rounded-md">
-                        <h4 className="text-md font-semibold mb-2">AI Svar:</h4>
-                        <div className="flex flex-col gap-2">
-                        {aiResponse.split("\n").map((line, index) => (
-                            <p key={index} className="text-zinc-200 whitespace-pre-line">{line}</p>
-                        ))}
-                        </div>
-                    </div>
-                )}
             </div>
+            {aiResponse && (
+                <div className="mt-1 p-3 bg-blue-900 border border-blue-700 rounded-md">
+                    <h4 className="text-md font-semibold mb-2">AI Svar:</h4>
+                    <div className="flex flex-col gap-2">
+                    {aiResponse.split("\n").map((line, index) => (
+                        <p key={index} className="text-zinc-200 whitespace-pre-line">{line}</p>
+                    ))}
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
