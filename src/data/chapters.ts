@@ -550,22 +550,22 @@ export const chapters = [
             {
                 question: "Hva betyr konvolusjon?",
                 options: [
-                    "Sammenslåing av fordelinger ved addisjon",
                     "Multiplikasjon av forventninger",
                     "Integrasjon av konstante funksjoner",
                     "Sammenligning av uavhengighet",
+                    "Sammenslåing av fordelinger ved addisjon",
                 ],
-                answer: 0,
+                answer: 3,
             },
             {
                 question: "Hva er $E[g(X)]$?",
                 options: [
-                    "$\\int g(x)f(x)dx$",
                     "$g(E[X])$",
+                    "$\\int g(x)f(x)dx$",
                     "$\\sum g(x)$",
                     "$E[X]\\cdot g(x)$",
                 ],
-                answer: 0,
+                answer: 1,
             },
         ],
     },
@@ -612,42 +612,42 @@ export const chapters = [
             {
                 question: "Hva betyr at en estimator er upartisk?",
                 options: [
-                    "$E[\\hat{\\theta}] = \\theta$",
                     "$Var(\\hat{\\theta}) = 0$",
                     "$\\hat{\\theta} > \\theta$ alltid",
+                    "$E[\\hat{\\theta}] = \\theta$",
                     "$\\hat{\\theta}$ er konstant",
                 ],
-                answer: 0,
+                answer: 2,
             },
             {
                 question: "Hva står MLE for?",
                 options: [
-                    "Maximum Likelihood Estimation",
                     "Mean Linear Estimator",
+                    "Maximum Likelihood Estimation",
                     "Minimum Loss Estimate",
                     "Most Likely Estimate",
                 ],
-                answer: 0,
+                answer: 1,
             },
             {
                 question: "Hva sier Cramér–Rao-grensen?",
                 options: [
-                    "Var(\\hat{\\theta}) \\ge 1/I(\\theta)",
                     "Var(\\hat{\\theta}) \\le 1/I(\\theta)",
                     "Estimatorer har ingen øvre variansgrense",
                     "Estimatet er alltid upartisk",
+                    "Var(\\hat{\\theta}) \\ge 1/I(\\theta)",
                 ],
-                answer: 0,
+                answer: 3,
             },
             {
                 question: "Hva er en konsistent estimator?",
                 options: [
-                    "Estimatoren konvergerer mot sanne parameter når n øker",
                     "Estimatoren er upartisk",
+                    "Estimatoren konvergerer mot sanne parameter når n øker",
                     "Estimatoren har lavest varians",
                     "Estimatoren estimerer konstant",
                 ],
-                answer: 0,
+                answer: 1,
             },
             {
                 question: "MLE-estimatet velges typisk ved å:",
@@ -698,27 +698,27 @@ export const chapters = [
             {
                 question: "Når brukes t-intervall?",
                 options: [
-                    "Når varians er ukjent og n er liten",
-                    "Når varians er kjent",
                     "Alltid",
                     "Aldri",
+                    "Når varians er ukjent og n er liten",
+                    "Når varians er kjent",
                 ],
-                answer: 0,
+                answer: 2,
             },
             {
                 question: "Hva er $\\alpha$ i et 95 % konfidensintervall?",
-                options: ["0.05", "0.95", "0.5", "0.005"],
-                answer: 0,
+                options: ["0.95", "0.5", "0.05", "0.005"],
+                answer: 2,
             },
             {
                 question: "Hva gjør $z_{\\alpha/2}$-leddet?",
                 options: [
-                    "Bestemmer bredde basert på ønsket konfidensnivå",
                     "Estimerer gjennomsnitt",
                     "Estimerer varians",
                     "Kvantiserer data",
+                    "Bestemmer bredde basert på ønsket konfidensnivå",
                 ],
-                answer: 0,
+                answer: 3,
             },
             {
                 question: "Hva er forskjellen på prediksjons- og konfidensintervall?",
@@ -733,12 +733,12 @@ export const chapters = [
             {
                 question: "I prediksjonsintervall-formelen, hva gjør $\\sqrt{1 + 1/n}$?",
                 options: [
-                    "Tar hensyn til usikkerhet i estimatet",
                     "Sjekker normalitet",
+                    "Tar hensyn til usikkerheten i estimatet",
                     "Korrigerer for bias",
                     "Gjør intervallet smalere",
                 ],
-                answer: 0,
+                answer: 1,
             },
         ],
     },
@@ -895,22 +895,22 @@ export const chapters = [
             {
                 question: "Hva betyr $R^2$?",
                 options: [
-                    "Andel varians i Y forklart av modellen",
                     "Korrelasjon mellom X og Y",
+                    "Andel varians i Y forklart av modellen",
                     "Varians i Y",
                     "Feilen i modell estimering",
                 ],
-                answer: 0,
+                answer: 1,
             },
             {
                 question: "Hva er $\\hat{Y}_i$?",
                 options: [
-                    "Predikert verdi for Y basert på X og estimatene",
                     "Middelverdien av Y",
                     "Residualverdi",
+                    "Predikert verdi for Y basert på X og estimatene",
                     "Feil",
                 ],
-                answer: 0,
+                answer: 2,
             },
         ],
     }

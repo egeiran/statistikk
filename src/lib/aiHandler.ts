@@ -24,7 +24,8 @@ export async function getAIResponse(
         på en enkel og intuitiv måte for en student som lærer TMA4240 / TMA4245 Statistikk ved NTNU.
         ${baseExplanation ? `Grunnforklaring: ${baseExplanation}` : ""}
         Bruk norsk, og vær konkret uten å bruke formler med mindre nødvendig.
-        Skriv for linjeskift der det er naturlig. 
+        Skriv for linjeskift der det er naturlig. Kom gjerne med både et praktisk eksempel. Lag gjerne en liste
+        hvis det passer for å oppsummere.
         `;
 
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
